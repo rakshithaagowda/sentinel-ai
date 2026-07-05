@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sentinel AI
 
 Sentinel AI is a full-stack emergency decision intelligence prototype. Citizens can report incidents with text, images, and optional audio. Responders can review AI triage, dispatch recommendations, and update incident status.
@@ -149,3 +150,7 @@ Frontend URL: `http://localhost:5173`
 2. Review the AI analysis and citizen status.
 3. Register a Responder account.
 4. Open the incident, click Dispatch Recommendation, then update status through Accepted, In Progress, and Resolved.
+=======
+# sentinel-ai
+AI-powered community and emergency intelligence system
+>>>>>>> 4cc2aca3cbf4763d8707454a537d438eda523b38
