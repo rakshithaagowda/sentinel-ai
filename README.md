@@ -278,7 +278,7 @@ npm run dev
 
 Developed collaboratively by:
 
-Rakshitha R S
+Rakshitha R S and
 Kruthia C
 
 
