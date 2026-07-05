@@ -1,91 +1,242 @@
-<<<<<<< HEAD
-# Sentinel AI
+# 🚨 Sentinel AI
 
-Sentinel AI is a full-stack emergency decision intelligence prototype. Citizens can report incidents with text, images, and optional audio. Responders can review AI triage, dispatch recommendations, and update incident status.
+### AI-Powered Emergency & Community Intelligence System
 
-## Phases
+Sentinel AI is an AI-powered full-stack platform that connects **citizens** and **emergency responders** through a unified incident reporting and management system. Using **Google Gemini AI**, the platform analyzes reported incidents, determines their severity, recommends the appropriate responder department, and assists authorities in making faster, data-driven decisions.
 
-1. Project structure + authentication
-   - React/Vite frontend and FastAPI backend.
-   - Register and login with Citizen or Responder roles.
-   - Role-based redirects and protected screens.
+Beyond emergency response, Sentinel AI enhances **community awareness** by displaying verified incidents on every citizen's dashboard, helping people stay informed about events happening around them.
 
-2. Incident reporting + database
-   - SQLite tables for users, incidents, and responder assignments.
-   - Citizen incident intake with description, location, people affected, image, and optional audio.
-   - Incident dashboard sorted by severity.
+---
 
-3. Gemini AI integration
-   - Backend calls Google Gemini when `GEMINI_API_KEY` is configured.
-   - Generates incident type, severity, confidence, reason card, summary, impact analysis, safety recommendations, recommended responder, responder reason, and public advisory.
-   - Recommends citizen-facing emergency contact details based on the incident, such as Ambulance `108`, Fire `101`, Police `100`, Electricity `1912`, Gas `1906`, and National Emergency `112`.
-   - Includes a conservative fallback analysis so the app still works without a key.
+# 🌟 Key Features
 
-4. Responder dashboard + dispatch
-   - Responders choose their department during registration.
-   - Responders provide location and availability status.
-   - Responders see related incident notifications when matching incidents are reported.
-   - Incidents are automatically assigned to available responders whose specialization matches the AI recommendation.
-   - Responders see the live incident queue for their department with filters and status controls.
-   - Dispatch Recommendation changes incidents to Assigned and saves a responder assignment.
-   - Responders can mark incidents Accepted, In Progress, or Resolved.
+## 👤 Citizen Portal
 
-5. UI polish + deployment
-   - Responsive dark command-center interface with a persistent dark mode toggle.
-   - Premium glass panels, animated cards, severity badges, service cards, filters, and image previews.
-   - Frontend-ready for Vercel and backend-ready for Render.
+Citizens can:
 
-## Tech Stack
+* Create an account and securely log in.
+* Report emergencies and civic issues.
+* Upload incident images and optional audio.
+* Share incident location and details.
+* Receive AI-generated incident analysis.
+* View emergency contact recommendations.
+* Track the status of submitted reports.
+* View incidents reported by other citizens in a shared community dashboard.
 
-- Frontend: React, Vite, Tailwind CSS, React Router, lucide-react
-- Backend: FastAPI
-- Database: SQLite
-- AI: Google Gemini API
-- Deployment: Vercel frontend, Render backend
+---
 
-## Project Structure
+## 🚒 Responder Portal
+
+Responders can:
+
+* Register under their department.
+* Securely log in.
+* Set availability status.
+* Receive department-specific incident notifications.
+* View AI-generated severity and recommendations.
+* Accept assigned incidents.
+* Update incident status through:
+
+  * Assigned
+  * Accepted
+  * In Progress
+  * Resolved
+
+---
+
+# 🔄 How Sentinel AI Works
+
+### Step 1 — Citizen Reports an Incident
+
+A citizen reports an incident by providing:
+
+* Description
+* Location
+* Number of people affected
+* Image evidence
+* Optional audio recording
+
+---
+
+### Step 2 — AI Analysis
+
+Google Gemini AI analyzes the report and generates:
+
+* Incident category
+* Severity level
+* Confidence score
+* Incident summary
+* Impact analysis
+* Safety recommendations
+* Recommended responder department
+* Public advisory
+
+---
+
+### Step 3 — Community Awareness
+
+Once submitted:
+
+* The reporting citizen can monitor the incident.
+* The incident is displayed on the dashboards of **all citizens**, helping the community stay informed about nearby emergencies and civic issues.
+
+---
+
+### Step 4 — Emergency Response
+
+The incident is routed to the appropriate responder department.
+
+Examples include:
+
+* 🔥 Fire Department
+* 🚓 Police
+* 🚑 Medical Services
+* ⚡ Electricity Board
+* ⛽ Gas Services
+
+Responders can review AI insights, accept the incident, and update its progress until resolution.
+
+---
+
+# 🤖 AI Features
+
+Sentinel AI integrates **Google Gemini AI** to provide intelligent decision support by generating:
+
+* Incident classification
+* Severity assessment
+* Confidence score
+* Incident summary
+* Impact analysis
+* Safety recommendations
+* Recommended response department
+* Public advisory
+* Emergency contact recommendations
+
+Supported emergency contacts include:
+
+* 🚑 Ambulance — 108
+* 🔥 Fire — 101
+* 🚓 Police — 100
+* ⚡ Electricity — 1912
+* ⛽ Gas Leakage — 1906
+* 🚨 National Emergency — 112
+
+The system also includes a fallback analysis mode, ensuring the application remains functional even when an AI API key is unavailable.
+
+---
+
+# 📸 Application Screenshots
+
+### Citizen Login
+
+![Citizen Login](assets/login.png)
+
+### Create Citizen Account
+
+![Create Account](assets/creacc.png)
+
+### Citizen Dashboard
+
+![Citizen Dashboard](assets/cithome1.png)
+
+### Community Dashboard
+
+![Community Dashboard](assets/cithome2.png)
+
+### Submit Incident
+
+![Submit Incident](assets/subreport.png)
+
+### Responder Login
+
+![Responder Login](assets/res%20login.png)
+
+### Department Selection
+
+![Department Selection](assets/reslogdept.png)
+
+### Responder Dashboard
+
+![Responder Dashboard](assets/resphome1.png)
+
+### Incident Queue
+
+![Incident Queue](assets/res2.png)
+
+### Incident Management
+
+![Incident Management](assets/reshome3.png)
+
+### Light Theme
+
+![Light Theme](assets/lighttheme.png)
+
+---
+
+# 🛠️ Technology Stack
+
+### Frontend
+
+* React
+* Vite
+* Tailwind CSS
+* React Router
+
+### Backend
+
+* FastAPI
+* Python
+
+### Database
+
+* SQLite
+
+### Artificial Intelligence
+
+* Google Gemini API
+
+### Deployment
+
+* Vercel (Frontend)
+* Render (Backend)
+
+---
+
+# 📁 Project Structure
 
 ```text
 sentinel-ai/
-  backend/
-    app/
-      ai.py
-      auth.py
-      database.py
-      main.py
-      uploads/
-    requirements.txt
-    .env.example
-  frontend/
-    src/
-      components/
-      context/
-      pages/
-      services/
-      utils/
-    package.json
-    vite.config.js
-    .env.example
+├── assets/
+├── backend/
+├── frontend/
+├── README.md
+└── .gitignore
 ```
 
-## Environment Variables
+---
 
-Backend:
+# ⚙️ Environment Variables
 
-```bash
+## Backend
+
+```env
 APP_SECRET=change-this-development-secret
 DATABASE_PATH=sentinel_ai.db
 GEMINI_API_KEY=your_google_ai_studio_key
 FRONTEND_ORIGIN=http://localhost:5173
 ```
 
-Frontend:
+## Frontend
 
-```bash
+```env
 VITE_API_URL=http://localhost:8000
 ```
 
-## Run Backend
+---
+
+# 🚀 Running the Project
+
+## Backend
 
 ```bash
 cd backend
@@ -96,9 +247,7 @@ copy .env.example .env
 uvicorn app.main:app --reload
 ```
 
-Backend URL: `http://localhost:8000`
-
-## Run Frontend
+## Frontend
 
 ```bash
 cd frontend
@@ -107,50 +256,36 @@ copy .env.example .env
 npm run dev
 ```
 
-Frontend URL: `http://localhost:5173`
+---
 
-## Deployment
+# 🌐 API Endpoints
 
-### Backend on Render
+* POST `/auth/register`
+* POST `/auth/login`
+* GET `/auth/me`
+* POST `/ai/analyze`
+* POST `/incidents`
+* GET `/incidents`
+* GET `/incidents/{incident_id}`
+* PATCH `/incidents/{incident_id}/status`
+* POST `/responders/assign/{incident_id}`
+* GET `/responders/assignments`
+* GET `/responders/notifications`
 
-1. Create a new Web Service from this repository.
-2. Set the root directory to `backend`.
-3. Build command: `pip install -r requirements.txt`
-4. Start command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-5. Add environment variables:
-   - `APP_SECRET`
-   - `GEMINI_API_KEY`
-   - `DATABASE_PATH=sentinel_ai.db`
+---
 
-### Frontend on Vercel
+# 👥 Team
 
-1. Create a new Vercel project from this repository.
-2. Set the root directory to `frontend`.
-3. Build command: `npm run build`
-4. Output directory: `dist`
-5. Add `VITE_API_URL` with the deployed Render backend URL.
+Developed collaboratively by:
 
-## API Summary
+Rakshitha R S
+Kruthia C
 
-- `POST /auth/register`
-- `POST /auth/login`
-- `GET /auth/me`
-- `POST /ai/analyze`
-- `POST /incidents`
-- `GET /incidents`
-- `GET /incidents/{incident_id}`
-- `PATCH /incidents/{incident_id}/status`
-- `POST /responders/assign/{incident_id}`
-- `GET /responders/assignments`
-- `GET /responders/notifications`
 
-## Demo Flow
+Version control and collaboration were managed using Git and GitHub.
 
-1. Register a Citizen account and submit an incident.
-2. Review the AI analysis and citizen status.
-3. Register a Responder account.
-4. Open the incident, click Dispatch Recommendation, then update status through Accepted, In Progress, and Resolved.
-=======
-# sentinel-ai
-AI-powered community and emergency intelligence system
->>>>>>> 4cc2aca3cbf4763d8707454a537d438eda523b38
+---
+
+# 🏆 APAC Hackathon 2026
+
+Sentinel AI was developed as a prototype for the **APAC Hackathon 2026** with the vision of building a smarter emergency response and civic intelligence platform. By combining Artificial Intelligence, real-time community reporting, and responder coordination, Sentinel AI aims to improve public safety, increase community awareness, and support faster emergency response.
