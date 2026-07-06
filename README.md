@@ -232,6 +232,12 @@ FRONTEND_ORIGIN=http://localhost:5173
 VITE_API_URL=http://localhost:8000
 ```
 
+Production frontend deployments on Vercel must use:
+
+```env
+VITE_API_URL=https://sentinel-ai-8j6h.onrender.com
+```
+
 ---
 
 # 🚀 Running the Project
@@ -255,6 +261,16 @@ npm install
 copy .env.example .env
 npm run dev
 ```
+
+## Vercel Frontend Deployment
+
+The repository includes `vercel.json` so Vercel can deploy from the repository root safely:
+
+- Install command: `cd frontend && npm ci`
+- Build command: `cd frontend && npm run build`
+- Output directory: `frontend/dist`
+- SPA rewrites route all frontend paths to `index.html`
+- `VITE_API_URL` is set to the Render backend URL
 
 ---
 
