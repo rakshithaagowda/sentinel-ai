@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "installCommand": "cd frontend && npm ci",
+  "buildCommand": "cd frontend && npm run build",
+  "outputDirectory": "frontend/dist",
+  "env": {
+    "VITE_API_URL": "https://sentinel-ai-8j6h.onrender.com"
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

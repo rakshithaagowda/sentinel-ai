@@ -29,7 +29,7 @@ export default function Login() {
         {error && <p className="alert">{error}</p>}
         <label className="field-label">Email<input className="field" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required /></label>
         <label className="field-label">Password<input className="field" type="password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} required /></label>
-        <button className="primary-button">Login</button>
+        <button type="submit" className="primary-button">Login</button>
         <p className="text-center text-sm text-slate-600">New here? <Link className="link" to="/register">Create an account</Link></p>
       </form>
     </main>
