@@ -302,6 +302,3 @@ Version control and collaboration were managed using Git and GitHub.
 
 ---
 
-# 🏆 APAC Hackathon 2026
-
-Sentinel AI was developed as a prototype for the **APAC Hackathon 2026** with the vision of building a smarter emergency response and civic intelligence platform. By combining Artificial Intelligence, real-time community reporting, and responder coordination, Sentinel AI aims to improve public safety, increase community awareness, and support faster emergency response.
